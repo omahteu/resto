@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://temdetudoscript.esy.es/gerenciarsalao/dashboard/index -->
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bruno Ribeiro">
+    <!--<base href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/">-->
+    <base href=".">
+    <link src="./image/logo.png" rel="icon" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/images/favicon/favicon.ico">
+    <title>PDV - Administração</title>
+    <!--Core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-reset.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link href="./css/clndr.css" rel="stylesheet">
+    <!--clock css-->
+    <link href="./css/style.css" rel="stylesheet">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="./css/morris.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./css/style(1).css">
+    <link href="./css/style-responsive.css" rel="stylesheet">
+    <!--external css-->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.gritter.css">
+    <!--[if lt IE 9]>
+        <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    <script>
+        function GuideSearch() {
+            var form = document.getElementById("form_guide_search");
+            var field = document.getElementById("g_search");
+            form.action = form.action + encodeURIComponent(field.value).replace(/%20/g, "+").replace(/%2/g, "");
+            form.submit();
+        }
+    </script>
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 30px;
+            top: 0px;
+            display: block;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0, 0, 0, 0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            border: 0px solid white;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            padding: 5px 5px 5px 5px;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+
+                <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/index" class="logo">
+                    <img src="./image/logo.png" alt="PDV" title="PDV">
+                </a>
+                <div class="sidebar-toggle-box">
+                    <div class="fa fa-bars"></div>
+                </div>
+            </div>
+            <!--logo end-->
+
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- inbox dropdown start-->
+
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle"
+                            href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/#">
+                            <i class="fa fa-envelope-o"></i></a>
+                        <ul class="dropdown-menu extended inbox">
+                            <li>
+                                <p>Você não tem mensagens</p>
+                            </li>
+                            <li>
+                                <a href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/manager_message">Ver
+                                    Todas</a>
+                            </li>
+                        </ul>
+                    </li> <!-- inbox dropdown end -->
+
+                    <!-- notification dropdown start-->
+
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle"
+                            href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/#">
+                            <i class="fa fa-bell-o"></i><span class="badge bg-warning">1</span></a>
+                        <ul class="dropdown-menu extended inbox">
+                            <li>
+                                <p>Notificações</p>
+                            </li>
+                            <li>
+                                <a
+                                    href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Notifier/notifier/preview/2">
+
+                                    <span class="subject">
+                                        <span class="from">Perfil alterado</span>
+                                        <span class="time">há 4 meses atrás</span>
+                                    </span>
+                                    <span class="message">
+                                        Você alterou informações do...
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="notifier_hover">
+                                <a
+                                    href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Notifier/notifier/preview/3">
+
+                                    <span class="subject">
+                                        <span class="from">Perfil alterado</span>
+                                        <span class="time">há 4 meses atrás</span>
+                                    </span>
+                                    <span class="message">
+                                        Você alterou informações do...
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/notifier_notifier">Ver
+                                    Todas</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul> <!--  notification end -->
+            </div>
+            <div class="top-nav clearfix">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <form id="form_guide_search"
+                            action="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Guide/doubts/Search"
+                            method="get">
+                            <input onsubmit="GuideSearch();" id="g_search" name="search" type="text"
+                                class="form-control search" placeholder=" Pesquisar Dúvidas">
+                        </form>
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle"
+                            href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/#">
+                            <img alt="admin" title="admin" width="33" height="33" src="./image/default.jpg">
+                            <span class="username">admin</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Settings/perfil"><i
+                                        class=" fa fa-suitcase"></i>Perfil</a></li>
+                            <!-- <li><a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/settings"><i class="fa fa-cog"></i> Configurações</a></li> -->
+                            <li><a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/System/Changerlog"><i
+                                        class="fa fa-book"></i> Changerlog</a></li>
+                            <li><a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/System/lock_screen"><i
+                                        class="fa fa-lock"></i> Suspender</a></li>
+                            <li><a href="http://temdetudoscript.esy.es/gerenciarsalao/login/logout"><i
+                                        class="fa fa-power-off"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                    <!--
+                         <li>
+                            <div class="toggle-right-box">
+                                <div class="fa fa-bars"></div>
+                            </div>
+                        </li>
+                        -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->
+                <div class="leftside-navigation" tabindex="5000" style="overflow: hidden; outline: none;">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <!--Faturamento-->
+                        <li class="sub-menu dcjq-parent-li" title="Movimentar">
+                            <a href="http://temdetudoscript.esy.es/gerenciarsalao/#" class="dcjq-parent">
+                                <i class="fa fa-external-link"></i>
+                                <span>Faturamento</span>
+                                <span class="dcjq-icon"></span>
+                            </a>
+                            <ul class="sub" style="display: none;">
+                                <li title="Movimentar Despesas">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/expense">Vendas no Período</a>
+                                </li>
+                                <li title="Movimentar Receitas">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/income">Vendas por Forma de Pagamento</a>
+                                </li>
+                                <li title="Movimentar Vendas Produtos">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/products">Comissão Garçon</a>
+                                </li>
+                                <li title="Movimentar Vendas Serviços">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/services">Lucratividade</a>
+                                </li>
+                                <li title="Movimentar Vendas Serviços">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/services">Curva ABC de Produtos</a>
+                                </li>
+                                <li title="Movimentar Vendas Serviços">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Mov/services">Vendas por Setor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Faturamento-->
+
+                        <!--Delivery-->
+                        <li class="sub-menu dcjq-parent-li" title="Ferramentas">
+                            <a href="http://temdetudoscript.esy.es/gerenciarsalao/#" class="dcjq-parent">
+                                <i class="fa fa-suitcase"></i>
+                                <span>Delivery</span>
+                                <span class="dcjq-icon"></span>
+                            </a>
+                            <ul class="sub" style="display: none;">
+                                <li title="Ferramentas Agenda">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Tools/calendar">Vendas por Bairro</a>
+                                </li>
+                                <li title="Ferramentas Agenda">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Tools/calendar">Comissão Motoqueiros</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Delivery-->
+
+                        <!--Estoque-->
+                        <li title="Guia do Usuário">
+                            <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Guide/doubts">
+                                <i class="fa fa-question-circle"></i>
+                                <span>Estoque</span>
+                            </a>
+                            <ul class="sub" style="display: none;">
+                                <li title="Ferramentas Agenda">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Tools/calendar">Ressuprimento por Demanda</a>
+                                </li>
+                                <li title="Ferramentas Agenda">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Tools/calendar">Ressuprimento Diário</a>
+                                </li>
+                                <li title="Ferramentas Agenda">
+                                    <a href="http://temdetudoscript.esy.es/gerenciarsalao/dashboard/Tools/calendar">Necessidade Diária</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Estoque-->
+
+                    </ul>
+                </div><!-- sidebar menu end-->
+                <div id="ascrail2000" class="nicescroll-rails"
+                    style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 0px; left: 237px; height: 663px; display: none; opacity: 0;">
+                    <div
+                        style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(31, 181, 173); border: 0px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 0px;">
+                    </div>
+                </div>
+                <div id="ascrail2000-hr" class="nicescroll-rails"
+                    style="height: 3px; z-index: auto; top: 660px; left: 0px; position: absolute; cursor: default; display: none; opacity: 0;">
+                    <div
+                        style="position: relative; top: 0px; height: 3px; width: 0px; background-color: rgb(31, 181, 173); border: 0px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 0px; left: 0px;">
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!--mini statistics start-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <div class="top-stats-panel">
+                                    <div class="gauge-canvas">
+                                        <h4 class="widget-h">Despesa Mensal</h4>
+                                        <canvas width="160" height="100" id="gauge"></canvas>
+                                    </div>
+                                    <ul class="gauge-meta clearfix">
+                                        <li id="gauge-textfield" class="pull-left gauge-value">70</li>
+                                        <li class="pull-right gauge-title">Prejuízo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-3">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <div class="top-stats-panel">
+                                    <div class="daily-visit">
+                                        <h4 class="widget-h">Ganhos Diários</h4>
+                                        <div id="daily-visit-chart"
+                                            style="width: 100%; height: 100px; display: block; padding: 0px; position: relative;">
+
+                                            <canvas class="flot-base" width="217" height="100"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 100px;"></canvas>
+                                            <div class="flot-text"
+                                                style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                                <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                    style="position: absolute; inset: 0px; display: block;">
+                                                    <div
+                                                        style="position: absolute; max-width: 43px; top: 88px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 69px; text-align: center;">
+                                                        5</div>
+                                                    <div
+                                                        style="position: absolute; max-width: 43px; top: 88px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 124px; text-align: center;">
+                                                        10</div>
+                                                    <div
+                                                        style="position: absolute; max-width: 43px; top: 88px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 182px; text-align: center;">
+                                                        15</div>
+                                                </div>
+                                                <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                    style="position: absolute; inset: 0px; display: block;">
+                                                    <div
+                                                        style="position: absolute; top: 62px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 11px; text-align: right;">
+                                                        0</div>
+                                                    <div
+                                                        style="position: absolute; top: 50px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 6px; text-align: right;">
+                                                        50</div>
+                                                    <div
+                                                        style="position: absolute; top: 37px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 0px; text-align: right;">
+                                                        100</div>
+                                                    <div
+                                                        style="position: absolute; top: 25px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 0px; text-align: right;">
+                                                        150</div>
+                                                    <div
+                                                        style="position: absolute; top: 12px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 0px; text-align: right;">
+                                                        200</div>
+                                                    <div
+                                                        style="position: absolute; top: 0px; font: 400 10px / 11.5px &quot;Open Sans&quot;, sans-serif; color: rgb(102, 102, 102); left: 0px; text-align: right;">
+                                                        250</div>
+                                                </div>
+                                            </div><canvas class="flot-overlay" width="217" height="100"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 100px;"></canvas>
+                                        </div>
+                                        <ul class="chart-meta clearfix">
+                                            <li class="pull-left visit-chart-value"></li>
+                                            <li class="pull-right visit-chart-title"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-3">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <div class="top-stats-panel">
+                                    <h4 class="widget-h">Serviços Mensais</h4>
+                                    <div class="sm-pie">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-3">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <div class="top-stats-panel">
+                                    <h4 class="widget-h">Vendas Mensais</h4>
+                                    <div class="bar-stats">
+                                        <ul class="progress-stat-bar clearfix">
+                                            <li data-percent="133.33%"><span class="progress-stat-percent pink"
+                                                    style="height: 133.33%;"></span></li>
+                                            <li data-percent="75%"><span class="progress-stat-percent "
+                                                    style="height: 75%;"></span></li>
+                                        </ul>
+                                        <ul class="bar-legend">
+                                            <li><span class="bar-legend-pointer pink"></span> Teste</li>
+                                            <li><span class="bar-legend-pointer green"></span> cabelo</li>
+                                            <li><span class="bar-legend-pointer yellow-b"></span> </li>
+                                        </ul>
+                                        <div class="daily-sales-info">
+                                            <span class="sales-count">5 </span> <span class="sales-label">Produtos
+                                                Vendidos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--mini statistics end-->
+                <div class="row">
+                    <div class="col-md-8">
+                        <!--earning graph start-->
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Gráfico Ganhos <span class="tools pull-right">
+                                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                    <a href="javascript:;" class="fa fa-times"></a>
+                                </span>
+                            </header>
+                            <div class="panel-body">
+                                <div id="graph-area" class="main-chart" style="position: relative;"><svg height="265"
+                                        version="1.1" width="679" xmlns="http://www.w3.org/2000/svg"
+                                        style="overflow: hidden; position: relative; top: -0.5625px;">
+                                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with
+                                            Raphaël 2.1.2</desc>
+                                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text
+                                            x="35.35546875" y="241" text-anchor="end" font="10px &quot;Arial&quot;"
+                                            stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0
+                                            </tspan>
+                                        </text>
+                                        <path fill="none" stroke="#dddddd" d="M40.35546875,241H669" stroke-width="0.5"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text
+                                            x="35.35546875" y="183.25" text-anchor="end" font="10px &quot;Arial&quot;"
+                                            stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">1,500
+                                            </tspan>
+                                        </text>
+                                        <path fill="none" stroke="#dddddd" d="M40.35546875,183.25H669"
+                                            stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </path><text x="35.35546875" y="125.5" text-anchor="end"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">3,000
+                                            </tspan>
+                                        </text>
+                                        <path fill="none" stroke="#dddddd" d="M40.35546875,125.5H669" stroke-width="0.5"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text
+                                            x="35.35546875" y="67.75" text-anchor="end" font="10px &quot;Arial&quot;"
+                                            stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">4,500
+                                            </tspan>
+                                        </text>
+                                        <path fill="none" stroke="#dddddd" d="M40.35546875,67.75H669" stroke-width="0.5"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text
+                                            x="35.35546875" y="10" text-anchor="end" font="10px &quot;Arial&quot;"
+                                            stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">6,000
+                                            </tspan>
+                                        </text>
+                                        <path fill="none" stroke="#dddddd" d="M40.35546875,10H669" stroke-width="0.5"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text
+                                            x="654.0158395210012" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-09
+                                            </tspan>
+                                        </text><text x="582.8918232116946" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-08
+                                            </tspan>
+                                        </text><text x="511.7678069023881" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-07
+                                            </tspan>
+                                        </text><text x="442.93811369983337" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-06
+                                            </tspan>
+                                        </text><text x="371.8140973905268" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-05
+                                            </tspan>
+                                        </text><text x="302.984404187972" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-04
+                                            </tspan>
+                                        </text><text x="231.86038787866548" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-03
+                                            </tspan>
+                                        </text><text x="96.49532458030781" y="246" text-anchor="middle"
+                                            font="10px &quot;Arial&quot;" stroke="none" fill="#888888"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;"
+                                            font-size="12px" font-family="sans-serif" font-weight="normal"
+                                            transform="matrix(1,0,0,1,0,7)">
+                                            <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2022-01
+                                            </tspan>
+                                        </text>
+                                        <path fill="#ef9c9c" stroke="#000000"
+                                            d="M40.35546875,241C91.97773865191606,240.990375,195.22227845574815,241,246.84454835766422,240.9615C299.6139798129562,240.86419230769232,405.1528427235401,240.2251875,457.9222741788321,240.23C510.69170563412405,240.23481249999998,616.230568544708,240.8075,669,241L669,241L40.35546875,241Z"
+                                            fill-opacity="0.7" stroke-width="0"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.7;">
+                                        </path>
+                                        <path fill="none" stroke="#ed5d5d"
+                                            d="M40.35546875,241C91.97773865191606,240.990375,195.22227845574815,241,246.84454835766422,240.9615C299.6139798129562,240.86419230769232,405.1528427235401,240.2251875,457.9222741788321,240.23C510.69170563412405,240.23481249999998,616.230568544708,240.8075,669,241"
+                                            stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </path>
+                                        <circle cx="40.35546875" cy="241" r="0" fill="#ed5d5d" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <circle cx="246.84454835766422" cy="240.9615" r="0" fill="#ed5d5d"
+                                            stroke="#ffffff" stroke-width="1"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                                        <circle cx="457.9222741788321" cy="240.23" r="3" fill="#ed5d5d" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <circle cx="669" cy="241" r="0" fill="#ed5d5d" stroke="#ffffff" stroke-width="1"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                                        <path fill="#d9d66d" stroke="#000000"
+                                            d="M40.35546875,205.195C91.97773865191606,165.155,195.22227845574815,54.625625,246.84454835766422,45.035C299.6139798129562,35.231249999999996,405.1528427235401,121.601875,457.9222741788321,127.6175C510.69170563412405,133.633125,616.230568544708,101.77437499999999,669,93.16L669,241L40.35546875,241Z"
+                                            fill-opacity="0.7" stroke-width="0"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.7;">
+                                        </path>
+                                        <path fill="none" stroke="#d6d23a"
+                                            d="M40.35546875,205.195C91.97773865191606,165.155,195.22227845574815,54.625625,246.84454835766422,45.035C299.6139798129562,35.231249999999996,405.1528427235401,121.601875,457.9222741788321,127.6175C510.69170563412405,133.633125,616.230568544708,101.77437499999999,669,93.16"
+                                            stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </path>
+                                        <circle cx="40.35546875" cy="205.195" r="0" fill="#d6d23a" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <circle cx="246.84454835766422" cy="45.035" r="0" fill="#d6d23a"
+                                            stroke="#ffffff" stroke-width="1"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                                        <circle cx="457.9222741788321" cy="127.6175" r="3" fill="#d6d23a"
+                                            stroke="#ffffff" stroke-width="1"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                                        <circle cx="669" cy="93.16" r="0" fill="#d6d23a" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <path fill="#62d5ce" stroke="#000000"
+                                            d="M40.35546875,238.69C91.97773865191606,237.535,195.22227845574815,233.78442307692308,246.84454835766422,234.07C299.6139798129562,234.36192307692306,405.1528427235401,240.566875,457.9222741788321,241C510.69170563412405,241,616.230568544708,238.40125,669,237.535L669,241L40.35546875,241Z"
+                                            fill-opacity="0.7" stroke-width="0"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.7;">
+                                        </path>
+                                        <path fill="none" stroke="#32d2c9"
+                                            d="M40.35546875,238.69C91.97773865191606,237.535,195.22227845574815,233.78442307692308,246.84454835766422,234.07C299.6139798129562,234.36192307692306,405.1528427235401,240.566875,457.9222741788321,241C510.69170563412405,241,616.230568544708,238.40125,669,237.535"
+                                            stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </path>
+                                        <circle cx="40.35546875" cy="238.69" r="0" fill="#32d2c9" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <circle cx="246.84454835766422" cy="234.07" r="0" fill="#32d2c9"
+                                            stroke="#ffffff" stroke-width="1"
+                                            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                                        <circle cx="457.9222741788321" cy="241" r="3" fill="#32d2c9" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                        <circle cx="669" cy="237.535" r="0" fill="#32d2c9" stroke="#ffffff"
+                                            stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        </circle>
+                                    </svg>
+                                    <div class="morris-hover morris-default-style"
+                                        style="left: 393.422px; top: 137px; display: block;">
+                                        <div class="morris-hover-row-label">2022-06-07 12:44:36</div>
+                                        <div class="morris-hover-point" style="color: #ED5D5D">
+                                            Receitas:
+                                            20
+                                        </div>
+                                        <div class="morris-hover-point" style="color: #D6D23A">
+                                            Produtos:
+                                            2,945
+                                        </div>
+                                        <div class="morris-hover-point" style="color: #32D2C9">
+                                            Serviços:
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--earning graph end-->
+                    </div>
+                    <div class="col-md-4">
+                        <!--widget graph start-->
+                        <section class="panel">
+                            <div class="panel-body">
+                                <div class="monthly-stats pink">
+                                    <div class="clearfix">
+                                        <h4 class="pull-left"> setembro 2022</h4>
+                                        <!-- Nav tabs -->
+                                        <div class="btn-group pull-right stat-tab">
+                                            <a href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/#line-chart"
+                                                class="btn stat-btn active" data-toggle="tab"><i
+                                                    class="ico-stats"></i></a>
+                                            <a href="http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/#bar-chart"
+                                                class="btn stat-btn" data-toggle="tab"><i class="ico-bars"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="line-chart">
+                                            <div class="sparkline" data-type="line" data-resize="true" data-height="75"
+                                                data-width="90%" data-line-width="1" data-min-spot-color="false"
+                                                data-max-spot-color="false" data-line-color="#ffffff"
+                                                data-spot-color="#ffffff" data-fill-color=""
+                                                data-highlight-line-color="#ffffff" data-highlight-spot-color="#e1b8ff"
+                                                data-spot-radius="3" data-data="[0,0,140,0,0,0,0]"><canvas width="279"
+                                                    height="75"
+                                                    style="display: inline-block; width: 279px; height: 75px; vertical-align: top;"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="bar-chart">
+                                            <div class="sparkline" data-type="bar" data-resize="true" data-height="75"
+                                                data-width="90%" data-bar-color="#d4a7f5" data-bar-width="10"
+                                                data-data="[0,0,140,0,0,0,0]"><canvas width="76" height="75"
+                                                    style="display: inline-block; width: 76px; height: 75px; vertical-align: top;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                        <!--widget graph end-->
+                        <!--widget graph start-->
+                        <section class="panel">
+                            <div class="panel-body">
+                                <ul class="clearfix prospective-spark-bar">
+                                    <li class="pull-left spark-bar-label">
+                                        <span class="bar-label-value"> R$ 10,935</span>
+                                        <span>Histório Anual</span>
+                                    </li>
+                                    <li class="pull-right">
+                                        <div class="sparkline" data-type="bar" data-resize="true" data-height="40"
+                                            data-width="90%" data-bar-color="#f6b0ae" data-bar-width="5"
+                                            data-data="[800,1640,2120,275,1170,1890,1320,1580,140]"><canvas width="53"
+                                                height="40"
+                                                style="display: inline-block; width: 53px; height: 40px; vertical-align: top;"></canvas>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!--widget graph end-->
+                    </div>
+                </div>
+                <!--mini statistics start-->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="mini-stat clearfix">
+                            <span class="mini-stat-icon orange"><i class="fa fa-gavel"></i></span>
+                            <div class="mini-stat-info">
+                                <span>1</span>
+                                Serviços
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mini-stat clearfix">
+                            <span class="mini-stat-icon tar"><i class="fa fa-tag"></i></span>
+                            <div class="mini-stat-info">
+                                <span>2</span>
+                                Produtos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mini-stat clearfix">
+                            <span class="mini-stat-icon pink"><i class="fa fa-money"></i></span>
+                            <div class="mini-stat-info">
+                                <span>R$ 140</span>
+                                Renda Mensal
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mini-stat clearfix">
+                            <span class="mini-stat-icon green"><i class="fa fa-eye"></i></span>
+                            <div class="mini-stat-info">
+                                <span>1</span>
+                                Clientes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--mini statistics end-->
+                <div class="row" id="event_list">
+                    <div class="col-md-12">
+                        <div class="event-calendar clearfix">
+                            <div class="col-lg-7 calendar-block">
+                                <div id="calendar" class="has-toolbar fc fc-ltr fc-unthemed">
+                                    <div class="fc-toolbar">
+                                        <div class="fc-left">
+                                            <div class="fc-button-group"><button type="button"
+                                                    class="fc-prev-button fc-button fc-state-default fc-corner-left">Anterior</button><button
+                                                    type="button"
+                                                    class="fc-next-button fc-button fc-state-default fc-corner-right">Próximo</button>
+                                            </div><button type="button"
+                                                class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled"
+                                                disabled="disabled">Hoje</button>
+                                        </div>
+                                        <div class="fc-right">
+                                            <div class="fc-button-group"><button type="button"
+                                                    class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">Mês</button><button
+                                                    type="button"
+                                                    class="fc-agendaWeek-button fc-button fc-state-default">Semana</button><button
+                                                    type="button"
+                                                    class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">Dia</button>
+                                            </div>
+                                        </div>
+                                        <div class="fc-center">
+                                            <h2>setembro 2022</h2>
+                                        </div>
+                                        <div class="fc-clear"></div>
+                                    </div>
+                                    <div class="fc-view-container" style="">
+                                        <div class="fc-view fc-month-view fc-basic-view" style="">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td class="fc-widget-header">
+                                                            <div class="fc-row fc-widget-header">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-sun">
+                                                                                dom</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-mon">
+                                                                                seg</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-tue">
+                                                                                ter</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-wed">
+                                                                                qua</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-thu">
+                                                                                qui</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-fri">
+                                                                                sex</th>
+                                                                            <th
+                                                                                class="fc-day-header fc-widget-header fc-sat">
+                                                                                sáb</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="fc-widget-content">
+                                                            <div class="fc-day-grid-container" style="">
+                                                                <div class="fc-day-grid">
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 70px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-other-month fc-past"
+                                                                                            data-date="2022-08-28"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-other-month fc-past"
+                                                                                            data-date="2022-08-29"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-other-month fc-past"
+                                                                                            data-date="2022-08-30"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-other-month fc-past"
+                                                                                            data-date="2022-08-31"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-past"
+                                                                                            data-date="2022-09-01"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-past"
+                                                                                            data-date="2022-09-02"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-past"
+                                                                                            data-date="2022-09-03"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-other-month fc-past"
+                                                                                            data-date="2022-08-28">28
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-other-month fc-past"
+                                                                                            data-date="2022-08-29">29
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-other-month fc-past"
+                                                                                            data-date="2022-08-30">30
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-other-month fc-past"
+                                                                                            data-date="2022-08-31">31
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-past"
+                                                                                            data-date="2022-09-01">1
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-past"
+                                                                                            data-date="2022-09-02">2
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-past"
+                                                                                            data-date="2022-09-03">3
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 70px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-past"
+                                                                                            data-date="2022-09-04"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-past"
+                                                                                            data-date="2022-09-05"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-past"
+                                                                                            data-date="2022-09-06"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-today fc-state-highlight"
+                                                                                            data-date="2022-09-07"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-future"
+                                                                                            data-date="2022-09-08"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-future"
+                                                                                            data-date="2022-09-09"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-future"
+                                                                                            data-date="2022-09-10"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-past"
+                                                                                            data-date="2022-09-04">4
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-past"
+                                                                                            data-date="2022-09-05">5
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-past"
+                                                                                            data-date="2022-09-06">6
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-today fc-state-highlight"
+                                                                                            data-date="2022-09-07">7
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-future"
+                                                                                            data-date="2022-09-08">8
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-future"
+                                                                                            data-date="2022-09-09">9
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-future"
+                                                                                            data-date="2022-09-10">10
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 70px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-future"
+                                                                                            data-date="2022-09-11"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-future"
+                                                                                            data-date="2022-09-12"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-future"
+                                                                                            data-date="2022-09-13"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-future"
+                                                                                            data-date="2022-09-14"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-future"
+                                                                                            data-date="2022-09-15"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-future"
+                                                                                            data-date="2022-09-16"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-future"
+                                                                                            data-date="2022-09-17"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-future"
+                                                                                            data-date="2022-09-11">11
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-future"
+                                                                                            data-date="2022-09-12">12
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-future"
+                                                                                            data-date="2022-09-13">13
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-future"
+                                                                                            data-date="2022-09-14">14
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-future"
+                                                                                            data-date="2022-09-15">15
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-future"
+                                                                                            data-date="2022-09-16">16
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-future"
+                                                                                            data-date="2022-09-17">17
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 70px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-future"
+                                                                                            data-date="2022-09-18"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-future"
+                                                                                            data-date="2022-09-19"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-future"
+                                                                                            data-date="2022-09-20"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-future"
+                                                                                            data-date="2022-09-21"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-future"
+                                                                                            data-date="2022-09-22"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-future"
+                                                                                            data-date="2022-09-23"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-future"
+                                                                                            data-date="2022-09-24"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-future"
+                                                                                            data-date="2022-09-18">18
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-future"
+                                                                                            data-date="2022-09-19">19
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-future"
+                                                                                            data-date="2022-09-20">20
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-future"
+                                                                                            data-date="2022-09-21">21
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-future"
+                                                                                            data-date="2022-09-22">22
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-future"
+                                                                                            data-date="2022-09-23">23
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-future"
+                                                                                            data-date="2022-09-24">24
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 70px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-future"
+                                                                                            data-date="2022-09-25"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-future"
+                                                                                            data-date="2022-09-26"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-future"
+                                                                                            data-date="2022-09-27"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-future"
+                                                                                            data-date="2022-09-28"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-future"
+                                                                                            data-date="2022-09-29"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-future"
+                                                                                            data-date="2022-09-30"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-other-month fc-future"
+                                                                                            data-date="2022-10-01"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-future"
+                                                                                            data-date="2022-09-25">25
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-future"
+                                                                                            data-date="2022-09-26">26
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-future"
+                                                                                            data-date="2022-09-27">27
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-future"
+                                                                                            data-date="2022-09-28">28
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-future"
+                                                                                            data-date="2022-09-29">29
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-future"
+                                                                                            data-date="2022-09-30">30
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-other-month fc-future"
+                                                                                            data-date="2022-10-01">1
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                        style="height: 72px;">
+                                                                        <div class="fc-bg">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-day fc-widget-content fc-sun fc-other-month fc-future"
+                                                                                            data-date="2022-10-02"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-mon fc-other-month fc-future"
+                                                                                            data-date="2022-10-03"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-tue fc-other-month fc-future"
+                                                                                            data-date="2022-10-04"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-wed fc-other-month fc-future"
+                                                                                            data-date="2022-10-05"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-thu fc-other-month fc-future"
+                                                                                            data-date="2022-10-06"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-fri fc-other-month fc-future"
+                                                                                            data-date="2022-10-07"></td>
+                                                                                        <td class="fc-day fc-widget-content fc-sat fc-other-month fc-future"
+                                                                                            data-date="2022-10-08"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="fc-content-skeleton">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="fc-day-number fc-sun fc-other-month fc-future"
+                                                                                            data-date="2022-10-02">2
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-mon fc-other-month fc-future"
+                                                                                            data-date="2022-10-03">3
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-tue fc-other-month fc-future"
+                                                                                            data-date="2022-10-04">4
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-wed fc-other-month fc-future"
+                                                                                            data-date="2022-10-05">5
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-thu fc-other-month fc-future"
+                                                                                            data-date="2022-10-06">6
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-fri fc-other-month fc-future"
+                                                                                            data-date="2022-10-07">7
+                                                                                        </td>
+                                                                                        <td class="fc-day-number fc-sat fc-other-month fc-future"
+                                                                                            data-date="2022-10-08">8
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 event-list-block">
+                                <div class="cal-day"><span>Hoje</span>Quarta-Feira</div>
+                                <div class="slimScrollDiv"
+                                    style="position: relative; overflow: hidden; width: auto; height: 305px;">
+                                    <ul class="event-list" style="overflow: hidden; width: auto; height: 305px;"></ul>
+                                    <div class="slimScrollBar"
+                                        style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 305px;">
+                                    </div>
+                                    <div class="slimScrollRail"
+                                        style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control evnt-input" placeholder="Notas">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!--chat start-->
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Chat Global <span class="tools pull-right">
+                                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                    <a href="javascript:;" class="fa fa-times"></a>
+                                </span>
+                            </header>
+                            <div class="panel-body">
+                                <div class="chat-conversation">
+                                    <div class="slimScrollDiv"
+                                        style="position: relative; overflow: hidden; width: auto; height: 360px;">
+                                        <ul class="conversation-list"
+                                            style="overflow: hidden; width: auto; height: 360px;">
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>teste</p>
+                                                        <i title="enviado 13 de dezembro, 2021 ás 18:38"> há 9 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>ola</p>
+                                                        <i title="enviado 26 de janeiro, 2022 ás 12:46"> há 7 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>Olá</p>
+                                                        <i title="enviado 18 de fevereiro, 2022 ás 14:21"> há 7 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>df</p>
+                                                        <i title="enviado 18 de mar�o, 2022 ás 20:12"> há 6 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>Oi</p>
+                                                        <i title="enviado 17 de junho, 2022 ás 17:04"> há 3 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>oi me come</p>
+                                                        <i title="enviado 21 de junho, 2022 ás 01:31"> há 3 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>oi</p>
+                                                        <i title="enviado 25 de junho, 2022 ás 23:14"> há 2 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>teste</p>
+                                                        <i title="enviado 30 de junho, 2022 ás 01:40"> há 2 meses
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="chat-avatar">
+                                                    <img src="./image/default.jpg" width="42" height="42" alt="admin">
+                                                </div>
+                                                <div class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <i title="admin">admin</i>
+                                                        <p>oi</p>
+                                                        <i title="enviado 12 de agosto, 2022 ás 20:44"> há 26 dias
+                                                            atrás</i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="slimScrollBar"
+                                            style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 146.275px;">
+                                        </div>
+                                        <div class="slimScrollRail"
+                                            style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control chat-input"
+                                                placeholder="Insira uma mensagem">
+                                        </div>
+                                        <div class="col-xs-3 chat-send">
+                                            <button type="submit" class="btn btn-default">Enviar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--chat end-->
+                    </div>
+                    <div class="col-md-6">
+                        <!--todolist start-->
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Tarefas <span class="tools pull-right">
+                                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                    <a href="javascript:;" class="fa fa-times"></a>
+                                </span>
+                            </header>
+                            <div class="panel-body">
+                                <div class="slimScrollDiv"
+                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                    <ul class="to-do-list ui-sortable" id="sortable-todo"
+                                        style="overflow: hidden; width: auto; height: 300px;"></ul>
+                                    <div class="slimScrollBar"
+                                        style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                    </div>
+                                    <div class="slimScrollRail"
+                                        style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
+                                    </div>
+                                </div>
+                                <div class="todo-action-bar">
+                                    <div class="row">
+                                        <div id="task_box_message" class="col-xs-7 btn-add-task" style="display: none;">
+                                            <input class="form-control chat-input" id="task-message"
+                                                placeholder="Insira uma mensagem" type="text">
+                                        </div>
+                                        <div class="col-xs-4 btn-add-task">
+                                            <a id="task_update_button" class="btn btn-default btn-info"
+                                                style="display: none;"><i class="fa fa-pencil"></i> Editar</a>
+                                            <a id="task_new_button" class="btn btn-default btn-info"
+                                                style="display: none;"><i class="fa fa-plus"></i> Novo</a>
+                                            <a id="task_show_new_button" href="javascript:;"
+                                                class="btn btn-default btn-primary"><i class="fa fa-plus"></i> Adicionar
+                                                Tarefa</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--todolist end-->
+                        <link href="./css/fullcalendar.css" rel="stylesheet">
+                        <link href="./css/fullcalendar.print.css" rel="stylesheet" media="print">
+                        <!-- Placed js at the end of the document so the pages load faster -->
+                        <!-- Notifications -->
+                        <link rel="stylesheet" media="screen" href="./css/messenger.css">
+                        <link rel="stylesheet" media="screen" href="./css/messenger-theme-future.css">
+
+                        <!--<script type="text/javascript" src="js/notifications.js"></script>-->
+                        <!--Core js-->
+                        <script src="./js/jquery.js"></script>
+                        <script src="./js/jquery-ui-1.10.1.custom.min.js"></script>
+                        <script src="./js/bootstrap.min.js"></script>
+                        <script src="./js/jquery.dcjqaccordion.2.7.js"></script>
+                        <script src="./js/jquery.scrollTo.min.js"></script>
+                        <script src="./js/jquery.slimscroll.js"></script>
+                        <script src="./js/jquery.nicescroll.js"></script>
+
+                        <!-- Notifications JS -->
+                        <script type="text/javascript" src="./js/messenger.min.js"></script>
+                        <script type="text/javascript" src="./js/messenger-theme-future.js"></script>
+                        <!--[if lte IE 8]>
+                <script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script>
+                <![endif]-->
+                        <script src="./js/skycons.js"></script>
+                        <script src="./js/jquery.scrollTo.js"></script>
+                        <script src="./js/jquery.easing.min.js"></script>
+                        <script src="./js/underscore-min.js"></script>
+
+                        <script src="./js/moment.min.js"></script>
+                        <script src="./js/fullcalendar.min.js"></script>
+                        <script src="./js/lang-all.js"></script>
+
+                        <script src="./js/gauge.js"></script>
+                        <script src="./js/jquery-jvectormap-1.2.2.min.js"></script>
+                        <script src="./js/jquery-jvectormap-us-lcc-en.js"></script>
+                        <script type="text/javascript" src="./js/jquery.gritter.js"></script>
+                        <!--clock init-->
+                        <script src="./js/css3clock.js"></script>
+                        <!--Easy Pie Chart-->
+                        <script src="./js/jquery.easypiechart.js"></script>
+                        <!--Sparkline Chart-->
+                        <script src="./js/jquery.sparkline.js"></script>
+                        <!--Morris Chart-->
+                        <script src="./js/morris.js"></script>
+                        <script src="./js/raphael-min.js"></script>
+                        <!--jQuery Flot Chart-->
+                        <script src="./js/jquery.flot.js"></script>
+                        <script src="./js/jquery.flot.tooltip.min.js"></script>
+                        <script src="./js/jquery.flot.resize.js"></script>
+                        <script src="./js/jquery.flot.pie.resize.js"></script>
+                        <script src="./js/jquery.flot.growraf.js"></script>
+                        <script src="./js/jquery.flot.animator.min.js"></script>
+
+                        <!--<script src="js/dashboard.js"></script>-->
+                        <script src="./js/jquery.customSelect.min.js"></script>
+                        <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+                        <!--common script init for all pages-->
+                        <script src="./js/scripts.js"></script>
+
+                        <!--this page script-->
+                        <script src="./js/validation-init.js"></script>
+                        <!--script for this page-->
+                        <!-- echo out the system feedback (error and success messages) -->
+                        <script type="text/javascript">
+                            (function ($) {
+                                "use strict";
+                                $(document).ready(function () {
+                                    if ($.fn.plot) {
+
+                                        var d1 = [[2, 0], [3, 0], [4, 0], [5, 0], [6, 140], [7, 0], [8, 0], [9, 0], [10, 0], [11, 210], [12, 0], [13, 0], [14, 0], [15, 0], [16, 210], [17, 0]];
+                                        var data = ([{
+                                            label: "Intervalo de Dia(s)",
+                                            data: d1,
+                                            lines: {
+                                                show: true,
+                                                fill: true,
+                                                lineWidth: 2,
+                                                fillColor: {
+                                                    colors: ["rgba(255,255,255,.1)", "rgba(160,220,220,.8)"]
+                                                }
+                                            }
+                                        }]);
+                                        var options = {
+                                            grid: {
+                                                backgroundColor: {
+                                                    colors: ["#fff", "#fff"]
+                                                },
+                                                borderWidth: 0,
+                                                borderColor: "#f0f0f0",
+                                                margin: 0,
+                                                minBorderMargin: 0,
+                                                labelMargin: 20,
+                                                hoverable: true,
+                                                clickable: true
+                                            },
+                                            legend: {
+                                                labelBoxBorderColor: "#ccc",
+                                                show: false,
+                                                noColumns: 0
+                                            },
+                                            series: {
+                                                stack: true,
+                                                shadowSize: 0,
+                                                highlightColor: 'rgba(30,120,120,.5)'
+
+                                            },
+                                            // Tooltip
+                                            tooltip: true,
+                                            tooltipOpts: {
+                                                content: "%s %x R$: %y",
+                                                shifts: {
+                                                    x: -60,
+                                                    y: 25
+                                                }
+                                            },
+
+
+                                            xaxis: {
+                                                tickLength: 0,
+                                                tickDecimals: 0,
+                                                show: true,
+                                                min: 2,
+
+                                                font: {
+                                                    style: "normal",
+                                                    color: "#666666"
+                                                }
+                                            },
+                                            yaxis: {
+                                                ticks: 3,
+                                                tickDecimals: 0,
+                                                show: true,
+                                                tickColor: "#f0f0f0",
+                                                font: {
+
+                                                    style: "normal",
+
+
+                                                    color: "#666666"
+                                                }
+                                            },
+                                            //        lines: {
+                                            //            show: true,
+                                            //            fill: true
+                                            //
+                                            //        },
+                                            points: {
+                                                show: true,
+                                                radius: 2,
+                                                symbol: "circle"
+                                            },
+                                            colors: ["#87cfcb", "#48a9a7"]
+                                        };
+                                        var plot = $.plot($("#daily-visit-chart"), data, options);
+
+
+                                        $(document).on('click', '.event-close', function () {
+                                            windows.location = this;
+                                            return false;
+                                        });
+
+
+                                        $(function () {
+                                            $('.evnt-input').keypress(function (e) {
+                                                var p = e.which;
+                                                var inText = $('.evnt-input').val();
+                                                if (p == 13) {
+                                                    if (inText == "") {
+                                                        alert('Campo vazio');
+                                                    } else {
+                                                        $.ajax({
+                                                            url: 'http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/js/evnt.php',
+                                                            type: 'post',
+                                                            data: { "DataText": inText, "UserId": 11 },
+                                                            success: function (response) {
+                                                                $('.event-list').html(response);
+                                                            }
+                                                        });
+                                                    }
+                                                    $(this).val('');
+                                                    $('.event-list').scrollTo('100%', '100%', {
+                                                        easing: 'swing'
+                                                    });
+
+                                                    return false;
+                                                    e.epreventDefault();
+                                                    e.stopPropagation();
+                                                }
+                                            });
+                                        });
+
+                                        // DONUT
+
+                                    }
+
+
+
+                                    /*==Slim Scroll ==*/
+                                    if ($.fn.slimScroll) {
+                                        $('.event-list').slimscroll({
+                                            height: '305px',
+                                            wheelStep: 20
+                                        });
+                                        $('.conversation-list').slimscroll({
+                                            height: '360px',
+                                            wheelStep: 35
+                                        });
+                                        $('.to-do-list').slimscroll({
+                                            height: '300px',
+                                            wheelStep: 35
+                                        });
+                                    }
+
+
+                                    /*==Easy Pie chart ==*/
+                                    if ($.fn.easyPieChart) {
+                                        $('.epie-chart').easyPieChart({
+                                            onStep: function (from, to, percent) {
+                                                $(this.el).find('.percent').text(Math.round(percent));
+                                            },
+                                            barColor: "#f8a20f",
+                                            lineWidth: 5,
+                                            size: 80,
+                                            trackColor: "#efefef",
+                                            scaleColor: "#cccccc"
+
+                                        });
+
+                                    }
+
+                                    if (Morris.EventEmitter) {
+                                        // Use Morris.Area instead of Morris.Line
+                                        Morris.Area({
+                                            element: 'graph-area',
+                                            padding: 10,
+                                            behaveLikeLine: true,
+                                            gridEnabled: false,
+                                            gridLineColor: '#dddddd',
+                                            axes: true,
+                                            fillOpacity: .7,
+                                            data: [{
+                                                period: '2022-09-07 12:44:36',
+                                                Receitas: 0,
+                                                Produtos: 3840,
+                                                Serviços: 90
+                                            }, {
+                                                period: '2022-06-07 12:44:36',
+                                                Receitas: 20,
+                                                Produtos: 2945,
+                                                Serviços: 0
+                                            }, {
+                                                period: '2022-03-07 12:44:36',
+                                                Receitas: 1,
+                                                Produtos: 5090,
+                                                Serviços: 180
+                                            }, {
+                                                period: '2021-12-07 12:44:36',
+                                                Receitas: 0,
+                                                Produtos: 930,
+                                                Serviços: 60
+                                            }],
+                                            lineColors: ['#ED5D5D', '#D6D23A', '#32D2C9'],
+                                            xkey: 'period',
+                                            ykeys: ['Receitas', 'Produtos', 'Serviços'],
+                                            labels: ['Receitas', 'Produtos', 'Serviços'],
+                                            pointSize: 0,
+                                            lineWidth: 0,
+                                            hideHover: 'auto',
+                                            tooltip: true,
+                                            tooltipOpts: {
+                                                content: "%s %x R$: %y",
+                                                shifts: {
+                                                    x: -60,
+                                                    y: 25
+                                                }
+                                            },
+                                            xaxis: {
+
+                                                mode: "time",
+                                                dayNames: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+                                                monthNames: ["Jan", "Fev", "Mai", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+                                                timeformat: "%a %d de %b", minTickSize: [4, "day"]
+
+                                            }, yaxes: [{
+                                                /* First y axis */
+                                            }, {
+                                                /* Second y axis */
+                                                position: "right" /* left or right */
+                                            }]
+
+                                        });
+
+                                    }
+
+                                    $('.progress-stat-bar li').each(function () {
+                                        $(this).find('.progress-stat-percent').animate({
+                                            height: $(this).attr('data-percent')
+                                        }, 1000);
+                                    });
+
+                                    $('.todo-check label').click(function () {
+                                        $.ajax({
+                                            url: 'http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/js/task.php',
+                                            type: 'post',
+                                            data: { "status": this, "UserId": 11 },
+                                            success: function (response) {
+                                                $('#sortable-todo').html(response);
+
+                                            }
+                                        });
+                                        return false;
+                                        // $(this).parents('li').children('.todo-title').toggleClass('line-through');
+                                    });
+
+
+                                    $('.stat-tab .stat-btn').click(function () {
+
+                                        $(this).addClass('active');
+                                        $(this).siblings('.btn').removeClass('active');
+
+                                    });
+
+                                    $('select.styled').customSelect();
+                                    $("#sortable-todo").sortable();
+
+                                    /*Chat*/
+                                    $(function () {
+                                        $('.chat-input').keypress(function (ev) {
+                                            var p = ev.which;
+                                            var chatTime = moment().format("h:mm");
+                                            var chatText = $('.chat-input').val();
+                                            if (p == 13) {
+                                                if (chatText == "") {
+                                                    alert('Empty Field');
+                                                } else {
+                                                    $.ajax({
+                                                        url: 'http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/js/chat.php',
+                                                        type: 'post',
+                                                        data: { "Text": chatText, "UserId": 11 },
+                                                        success: function (response) {
+                                                            $('.conversation-list').html(response);
+                                                        }
+                                                    });
+                                                }
+                                                $(this).val('');
+                                                $('.conversation-list').scrollTo('100%', '100%', {
+                                                    easing: 'swing'
+                                                });
+                                                return false;
+                                                ev.epreventDefault();
+                                                ev.stopPropagation();
+                                            }
+                                        });
+
+
+                                        $('.chat-send .btn').click(function () {
+                                            var chatTime = moment().format("h:mm");
+                                            var chatText = $('.chat-input').val();
+                                            if (chatText == "") {
+                                                alert('Empty Field');
+                                                $(".chat-input").focus();
+                                            } else {
+                                                $.ajax({
+                                                    url: 'http://temdetudoscript.esy.es/gerenciarsalao/public/dashboard/js/chat.php',
+                                                    type: 'post',
+                                                    data: { "Text": chatText, "UserId": 11 },
+                                                    success: function (response) {
+                                                        $('.conversation-list').html(response);
+                                                    }
+                                                });
+                                                $('.chat-input').val('');
+                                                $(".chat-input").focus();
+                                                $('.conversation-list').scrollTo('100%', '100%', {
+                                                    easing: 'swing'
+                                                });
+                                            }
+                                        });
+                                    });
+
+
+                                });
+
+
+                            })(jQuery);
+
+
+                            if (Skycons) {
+                                /*==Weather==*/
+                                var skycons = new Skycons({
+                                    "color": "#aec785"
+                                });
+                                // on Android, a nasty hack is needed: {"resizeClear": true}
+                                // you can add a canvas by it's ID...
+                                skycons.add("icon1", Skycons.RAIN);
+                                // start animation!
+                                skycons.play();
+                                // you can also halt animation with skycons.pause()
+                                // want to change the icon? no problem:
+                                skycons.set("icon1", Skycons.RAIN);
+
+                            }
+
+                            if (Gauge) {
+                                /*Knob*/
+                                var opts = {
+                                    lines: 12, // The number of lines to draw
+                                    angle: 0, // The length of each line
+                                    lineWidth: 0.48, // The line thickness
+                                    pointer: {
+                                        length: 0.6, // The radius of the inner circle
+                                        strokeWidth: 0.03, // The rotation offset
+                                        color: '#464646' // Fill color
+                                    },
+                                    limitMax: 'true', // If true, the pointer will not go past the end of the gauge
+                                    colorStart: '#fa8564', // Colors
+                                    colorStop: '#fa8564', // just experiment with them
+                                    strokeColor: '#F1F1F1', // to see which ones work best for you
+                                    generateGradient: true
+                                };
+
+
+                                var target = document.getElementById('gauge'); // your canvas element
+                                var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+                                gauge.maxValue = 140; // set max gauge value
+                                gauge.animationSpeed = 32; // set animation speed (32 is default value)
+                                gauge.set(70); // set actual value
+                                gauge.setTextField(document.getElementById("gauge-textfield"));
+
+                            }
+                        </script>
+                        <script type="text/javascript">//<![CDATA[ 
+                            function TaskChecked(id, num) {
+                                sum = num;
+                                var form = document.getElementById("ftask" + num);
+                                form.submit();
+                            }
+
+                        </script>
+                        <style>
+                            .tooltipevent {
+                                position: absolute;
+                                z-index: 10001;
+                                border: 1px solid #5897fb;
+                                width: 20%;
+                                height: auto;
+                                background-color: white;
+                            }
+                        </style>
+                        <script>
+
+                            $(document).ready(function () {
+                                $("#task_box_message").hide();
+                                $("#task_new_button").hide();
+                                $("#task_update_button").hide();
+
+                                $("#task_show_new_button").click(function () {
+                                    $("#task_box_message").show();
+                                    $("#task_new_button").show();
+                                    $("#task_show_new_button").hide();
+                                });
+
+                                $("#task_new_button").click(function () {
+                                    $message = $("#task-message").val();
+                                    if ($message !== '') {
+                                        $.post("../../application/ajax/new_task.php", { message: $message }, function (json) {
+                                            if (json.error) {
+                                                Messenger().post({
+                                                    message: json.msg,
+                                                    type: 'error',
+                                                    showCloseButton: true
+                                                });
+                                            } else {
+                                                $("#task-message").val('');
+                                                $("#task_box_message").hide();
+                                                $("#task_new_button").hide();
+                                                $("#task_show_new_button").show();
+                                                $("#task_update_button").hide();
+                                                loadTasks();
+                                                Messenger().post({
+                                                    message: json.msg,
+                                                    showCloseButton: true
+                                                });
+                                            }
+                                        });
+                                    } else {
+                                        Messenger().post({
+                                            message: 'Digite alguma mensagem para tarefa',
+                                            type: 'error',
+                                            showCloseButton: true
+                                        });
+                                    }
+
+                                });
+                                function loadTasks() {
+                                    $.get("../../application/ajax/tasks.php", function (html) {
+                                        $("#sortable-todo").html(html);
+                                        // check
+                                        $(".task_check").click(function () {
+                                            var myID = $(this).val();
+                                            var check = $(this).is(':checked') ? 1 : 0;
+                                            $.post("../../application/ajax/check_task.php", { id: myID, status: check }).done(function (json) {
+                                                if (json.error) {
+                                                    Messenger().post({
+                                                        message: json.msg,
+                                                        type: 'error',
+                                                        showCloseButton: true
+                                                    });
+                                                } else {
+                                                    loadTasks();
+                                                    Messenger().post({
+                                                        message: json.msg,
+                                                        showCloseButton: true
+                                                    });
+                                                }
+                                            });
+                                        });
+                                        //edit
+                                        $(".task_edit").click(function (e) {
+                                            var myID = $(this).val();
+                                            $.post("../../application/ajax/update_task.php", { action: "form", id: myID }).done(function (txt) {
+                                                $("#task-message").val(txt.title);
+
+                                                $("#task_box_message").show();
+                                                $("#task_update_button").show();
+
+                                                $("#task_new_button").hide();
+                                                $("#task_show_new_button").hide();
+
+                                                $("#task_update_button").click(function () {
+                                                    $message = $("#task-message").val();
+                                                    if ($message !== '') {
+                                                        $.post("../../application/ajax/update_task.php", { action: "update", message: $message, id: myID }, function (json) {
+                                                            if (json.error) {
+                                                                Messenger().post({
+                                                                    message: json.msg,
+                                                                    type: 'error',
+                                                                    showCloseButton: true
+                                                                });
+                                                            } else {
+                                                                $("#task-message").val('');
+                                                                $("#task_box_message").hide();
+                                                                $("#task_new_button").hide();
+                                                                $("#task_show_new_button").show();
+                                                                $("#task_update_button").hide();
+                                                                loadTasks();
+                                                                Messenger().post({
+                                                                    message: json.msg,
+                                                                    showCloseButton: true
+                                                                });
+                                                            }
+                                                        });
+                                                    } else {
+                                                        Messenger().post({
+                                                            message: 'Você não pode alterar a tarefa e deixar o campo vázio',
+                                                            type: 'error',
+                                                            showCloseButton: true
+                                                        });
+                                                    }
+                                                });
+                                            });
+                                        });
+                                        // remove
+                                        $(".task_remove").click(function (e) {
+                                            var myID = $(this).val();
+                                            $.getJSON("../../application/ajax/del_task.php?id=" + myID, function (json) {
+                                                if (json.error) {
+                                                    Messenger().post({
+                                                        message: json.msg,
+                                                        type: 'error',
+                                                        showCloseButton: true
+                                                    });
+                                                } else {
+                                                    $("#task_update_button").hide();
+                                                    loadTasks();
+                                                    Messenger().post({
+                                                        message: json.msg,
+                                                        showCloseButton: true
+                                                    });
+                                                }
+                                            });
+                                        });
+                                    });
+                                }
+
+                                loadTasks();
+                                function renderCalendar() {
+                                    $('#calendar').fullCalendar({
+                                        header: {
+                                            left: 'prev,next today',
+                                            center: 'title',
+                                            right: 'month,agendaWeek,agendaDay'
+                                        },
+                                        defaultDate: '2022-09-07',
+                                        lang: 'pt-br',
+                                        buttonIcons: true, // show the prev/next text
+                                        weekNumbers: false,
+                                        editable: false,
+                                        eventLimit: true, // allow "more" link when too many events
+
+                                        eventMouseover: function (calEvent, jsEvent) {
+                                            var title = "<tr><th>Título : </th><th> " + calEvent.title + "</th></tr>";
+                                            var client = "<tr><th>Cliente : </th><th> " + calEvent.client + "</th></tr>";
+                                            var data = "<tr><th>Data : </th><th> " + calEvent.date_formatted + "</th></tr>";
+                                            var time = "<tr><th>Horário : </th><th> " + calEvent.time_formatted + "</th></tr>";
+                                            var msg = "<tr><th>Descrição : </th><th> " + calEvent.msg + "</th></tr>";
+                                            var content = client + title + data + time + msg;
+                                            var tooltip = '<table id="calendar" class="tooltipevent"><tbody>' + content + '</tbody></table>';
+                                            $("body").append(tooltip);
+                                            $(this).mouseover(function (e) {
+                                                $(this).css('z-index', 10000);
+                                                $('.tooltipevent').fadeIn('500');
+                                                $('.tooltipevent').fadeTo('10', 1.9);
+                                            }).mousemove(function (e) {
+                                                $('.tooltipevent').css('top', e.pageY + 10);
+                                                $('.tooltipevent').css('left', e.pageX + 20);
+                                            });
+                                        },
+                                        eventMouseout: function (calEvent, jsEvent) {
+                                            $(this).css('z-index', 8);
+                                            $('.tooltipevent').remove();
+                                        },
+                                        events: [],
+                                    });
+                                }
+
+                                renderCalendar();
+                            });
+
+                        </script>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <div id="flotTip"
+        style="display: none; position: absolute; background: rgb(255, 255, 255); z-index: 100; padding: 0.4em 0.6em; border-radius: 0.5em; font-size: 0.8em; border: 1px solid rgb(17, 17, 17); white-space: nowrap; left: 570px; top: 192px;">
+    </div>
+</body>
+
+</html>
