@@ -182,7 +182,7 @@
 }
 @media (max-width: 479px) {
     body{
-        margin-top:80px !important;
+        width: auto;
     }
     .header{
         position: relative !important;
@@ -192,11 +192,9 @@
         margin-right: 0px !important;
     }
     .brand{
-        width: 100%;
+        width: auto;
         float: none;
-        position: fixed;
-        top: 0px;
-        z-index: 1005;
+
     }
     .sidebar-toggle-box{
         right: 10px;
